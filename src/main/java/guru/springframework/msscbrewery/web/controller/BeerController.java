@@ -29,7 +29,7 @@ public class BeerController {
     }
 
     @PostMapping // POST - Create new beer
-    public ResponseEntity handlePost(BeerDto beerDto) {
+    public ResponseEntity handlePost(@RequestBody BeerDto beerDto) {
 
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
 
