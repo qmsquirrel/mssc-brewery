@@ -6,9 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Data
@@ -17,16 +15,13 @@ import java.util.UUID;
 @Builder
 public class Beer {
 
-    @NotNull
+
     private UUID id;
-
-    @NotBlank
     private String beerName;
-
-    @NotBlank
     private BeerStyleEnum beerStyle;
-
-    @Positive
     private Long upc;
+
+    private Timestamp createdTime;
+    private Timestamp lastModifiedTime;
 
 }
